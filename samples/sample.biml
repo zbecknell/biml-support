@@ -1,0 +1,14 @@
+<#@ template tier="2" #>
+<Biml xmlns="http://schemas.varigence.com/biml.xsd">
+  <Packages>
+    <Package Name="Deploy Tables" ConstraintMode="Linear">
+      <Tasks>
+        <# foreach (var table in RootNode.Tables) { #>
+        <ExecuteSQL Name="Run <#=table.Name#> DDL" ConnectionName="Staging">
+          <DirectInput><#=table.GetDropAndCreateDdl()#></DirectInput>
+        </ExecuteSQL>
+        <# } #>
+      </Tasks>
+    </Package>
+  </Packages>
+</Biml>

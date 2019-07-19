@@ -1,0 +1,59 @@
+{
+    "name": "biml-support",
+    "displayName": "Biml Support",
+    "description": "Provides syntax highlighting for the Business Intelligence Markup Language.",
+    "version": "1.0.0",
+    "publisher": "zbecknell",
+    "icon": "assets/icon.png",
+    "activationEvents": [
+        "onLanguage:biml"
+    ],
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "bugs": {
+        "url": "https://github.com/zbecknell/biml-support/issues"
+    },
+    "homepage": "https://github.com/zbecknell/biml-support/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/zbecknell/biml-support.git"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "biml",
+                "aliases": [
+                    "Business Intelligence Markup Language",
+                    "biml"
+                ],
+                "extensions": [
+                    ".biml"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "biml",
+                "scopeName": "source.biml",
+                "path": "./syntaxes/biml.tmLanguage.json"
+            }
+        ]
+    },
+    "main": "./out/extension",
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "@types/node": "7.0.4",
+        "typescript": "^2.5.3",
+        "vscode": "^1.1.33"
+    }
+}

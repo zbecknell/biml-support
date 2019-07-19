@@ -1,0 +1,52 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Biml",
+	"scopeName": "source.biml",
+	"patterns": [{
+			"include": "text.xml"
+		},
+		{
+			"match": "(<#@|<#=|<#\\+|<#)(.*?)(#>)",
+			"name": "constant.biml",
+			"captures": {
+				"1": {
+					"name": "constant.biml"
+				},
+				"2": {
+					"patterns": [{
+						"include": "source.cs"
+					}]
+				},
+				"3": {
+					"name": "constant.biml"
+				}
+			}
+		},
+		{
+			"begin": "(<#=|<#@|<#\\+|<#)",
+			"beginCaptures": {
+				"1": {
+					"name": "constant.biml"
+				}
+			},
+			"end": "(.*?)(#>).*?",
+			"endCaptures": {
+				"1": {
+					"patterns": [{
+						"include": "source.cs"
+					}]
+				},
+				"2": {
+					"name": "constant.biml"
+				}
+			},
+			"patterns": [{
+				"begin": "(^|\\G)(?!((<#@|<#=|<#\\+|<#).*?))",
+				"while": "(^|\\G)(?!((.*?)#>))",
+				"patterns": [{
+					"include": "source.cs"
+				}]
+			}]
+		}
+	]
+}
