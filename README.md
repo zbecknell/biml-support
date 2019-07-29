@@ -1,6 +1,6 @@
 # Biml Support
 
-Very basic language support for Business Intelligence Markup Language (.biml) files.
+Very basic language support for [Business Intelligence Markup Language](https://www.varigence.com/Biml) (`.biml`) files.
 
 ## Features
 
