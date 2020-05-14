@@ -5,7 +5,7 @@
       <Tasks>
         <# foreach (var table in RootNode.Tables) { #>
         <ExecuteSQL Name="Run <#=table.Name#> DDL" ConnectionName="Staging">
-          <DirectInput><#=table.GetDropAndCreateDdl()#></DirectInput>
+          <DirectInput><#=table.GetDropAndCreateDdl()#><#= backToBackBlock.test() #></DirectInput>
         </ExecuteSQL>
         <# } #>
       </Tasks>

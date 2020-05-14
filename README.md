@@ -14,6 +14,10 @@ Currently only `C#` embedded highlighting is supported.
 
 ## Release Notes
 
+### 1.0.1
+
+Fix an issue where back-to-back blocks caused invalid highlighting.
+
 ### 1.0.0
 
 Initial release.

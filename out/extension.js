@@ -44,7 +44,7 @@ function activate(context) {
         if (!activeEditor || !isCandidateFile(activeEditor)) {
             return;
         }
-        var regEx = /(<#@|<#\+|<#=|<#|#>)+/g;
+        var regEx = /(<#@|<#\+|<#=|<#)|(#>)+/g;
         var text = activeEditor.document.getText();
         var brackets = [];
         var match;

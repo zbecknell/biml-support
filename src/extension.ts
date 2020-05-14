@@ -59,7 +59,7 @@ export function activate(context: vscode.ExtensionContext) {
 		if (!activeEditor || !isCandidateFile(activeEditor)) {
 			return;
 		}
-		const regEx = /(<#@|<#\+|<#=|<#|#>)+/g;
+		const regEx = /(<#@|<#\+|<#=|<#)|(#>)+/g;
 		const text = activeEditor.document.getText();
 		const brackets: vscode.DecorationOptions[] = [];
 		let match;
